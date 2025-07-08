@@ -4,7 +4,7 @@
     <meta charset="utf-8">
   	<meta name="viewport" content="initial-scale=1, width=device-width">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Dashboard</title>
 </head>
@@ -17,13 +17,13 @@
                 </div>
                 <br><br>
                 <div class="sidebar-home">
-                    <img src="img/home.jpg" alt="home"> <p>Home</p>
+                    <img src="assets/icons/home.jpg" alt="home"> <p>Home</p>
                 </div>
                 <div class="sidebar-workout">
-                    <img src="img/home.jpg" alt="workout"> <p>Workout</p>
+                    <img src="assets/icons/home.jpg" alt="workout"> <p>Workout</p>
                 </div>
                 <div class="sidebar-goals">
-                    <img src="img/home.jpg" alt="goals"> <p>Goals</p>
+                    <img src="assets/icons/home.jpg" alt="goals"> <p>Goals</p>
                 </div>
             </div>
 
@@ -31,10 +31,10 @@
 
             <div class="sidebar-bot"> <!-- bottom sidebar -->
                 <div class="sidebar-user">
-                    <img src="img/home.jpg" alt="user"> <p>User</p>
+                    <img src="assets/icons/home.jpg" alt="user"> <p>User</p>
                 </div>
                 <div class="sidebar-signout">
-                    <img src="img/home.jpg" alt="signout"> <p>Sign Out</p>
+                    <img src="assets/icons/home.jpg" alt="signout"> <p>Sign Out</p>
                 </div>
             </div>
         </div>
