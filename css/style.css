@@ -1,79 +1,112 @@
+/* =============== VARIABLES =============== */
+:root {
+  --primary: #1E79A6;
+  --bg: linear-gradient(180deg, #080f27, #102739);
+  --font-size-base: 1em;
+  --radius: 2em;
+}
+
+/* =============== GENERAL =============== */
+html, body{
+    /* for full screen no scroll */
+    height: 100%; 
+    margin: 0;
+    overflow: hidden;
+
+    /* general font for all */
+    font-family: Inter;
+
+    /* gradient bg */
+    background: var(--bg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 h3{
     font-weight: bold;
     line-height: 0;
     font-size: 1.5em;
 }
 
-html, 
-body{
-    height: 100%;
-    margin: 0;
-}
+/* =============== UTIL =============== */
 
-body{
-    margin: 0;
-    background: linear-gradient(180deg, #080f27, #102739); /*gradient*/
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    overflow: hidden; /*for no scroll*/
-    font-family: Inter;
-}
-
-.center{
-    /*border: 1px solid red;  debug */
-    display: flex;
-    gap: 1vw;
-
+/* FLEX PARENTS ----------------- */
+.flex-row{
     position: relative;
-    height: 100dvh;
-    padding: 3vw;
+    display: flex; 
+    flex-direction: row;
+    gap: 1em;
+
     box-sizing: border-box;
 }
 
-.sidebar,
-.main-content{
+.flex-col{
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    gap: 2em;
+
+    box-sizing: border-box;
+}
+/* ------------------------------- */
+
+.flex-child{
+    position: relative;
     height: 100%;
-    /* margin-bottom: 2rem; */
     box-sizing: border-box;
 }
 
+.center-align {
+  align-items: center;
+  justify-content: center;
+}
+
+.padrad {
+    padding: 1.5em;
+    border-radius: var(--radius);
+}
+
+/* =============== LAYOUT =============== */
+.center{
+    height: 100dvh; /*For full screen sakop*/
+    padding: 3em;
+}
+
+/* SIDEBAR ----------------------- */
 .sidebar{
-    /*border: 1px solid blue;  debug */
     background-color: rgba(64, 66, 85, 0.91);
     width: 14%;
-    text-align: center;
-    border-radius: 2vw;
-    padding: 1.3vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center; /* vertical center for texts */
-}
 
-.sidebar-top,
-.sidebar-bot{
-    /*border: 1px solid red;  debug */
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-    
-    
+    text-align: center;
+    justify-content: space-between;
 }
 
 .sidebar-btn{ /* all div children of sidebar */
-    /* border: 1px solid blue; */
-    border-radius: 2vw;
-    padding: 1em;
-    overflow: hidden; /* so that when resized, only logos appear */
+    border-radius: var(--radius);
+    padding: 2em;
     height: 2em;
-    display: flex;
-    align-items: center; /* vertical center for texts */
+    overflow: hidden; /* so that when resized, only logos appear */
+
+    align-items: center;
     justify-content: left;
     text-align: left;
 }
 
+/* LIGHT TWEAKS */
+.sidebar > div > div > p {
+    padding-top: 0.6vh;
+    color: white;
+}
 
-/* temp */
+.sidebar-bot{
+    padding-bottom: 1em;
+}
+/* ------------------------------- */
+
+
+
+/* =============== ICONS =============== */
+/* TEMP, TO CHANGE*/
 .icon{
     width: 2em;
     height: 2em;
@@ -93,12 +126,11 @@ body{
 
 /* logo */
 .lofit {
-    border-radius: 2vw;
-    overflow: hidden; /* so that when resized, only logos appear */
+    border-radius: 1.5em;
     height: 3em;
     display: flex;
-    align-items: center; /* vertical center for texts */
-    justify-content: left;
+    overflow: hidden; /* so that when resized, only logos appear */
+    
     text-align: left;
     font-weight: bold;
     font-size: 2em;
@@ -112,24 +144,12 @@ body{
     background-repeat: no-repeat;
 }
 
-/* sidebar font settings */
-.sidebar > div > div > p { /* space for text pra di dikit ung img, theres prob better ways to do this*/
-    padding-top: 0.6vh;
-    padding-left: 0.5vw;
-    color: white;
-}
 
 
 
-
-
-
+/* =============== MAIN CONTENT =============== */
 .main-content{
-
-    /*border: 1px solid red;  debug */
-    width: 86%; /*for flex with sidebar*/
-    border-radius: 2vw;
-    padding: 2vw;
+    width: 86%;
 
     display: flex; /* make containers go nxt to each other */
     gap: 1.2vw;
@@ -155,19 +175,12 @@ body{
     box-sizing: border-box;
 }
 
-.main-left
-.main-right{
-    border: 1px solid rgb(255, 22, 228); /* debug */
-
-    box-sizing: border-box;
-}
-
+/* MAIN LEFT COLUMN ------------------- */
 .main-left{
     width: 75%;
     height: 100%;
     
-    display: flex;
-    flex-direction: column;
+    gap: 0;
 }
 
 .main-left > div{ /*make it columns*/
@@ -176,114 +189,7 @@ body{
     box-sizing: border-box;
 }
 
-.main-heading > h1 {
-    font-size: 13vh;
-    line-height: 0.82;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-}
-
-.main-heading > h2 {
-    font-size: 2vw;
-    line-height: 0;
-}
-
-.quicklog{
-    display: flex;
-    flex-direction: row;
-    gap: 1vw;
-}
-
-.quicklog > div {
-    text-align: center;
-}
-
-.card{
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-
-    background-color: white;
-    border-radius: 1vw;
-    padding: 1vw;
-    line-height: 0;
-
-    overflow: hidden;
-}
-
-.card .txt-input {
-    width: 6vw;
-}
-
-.txt-input{
-    background-color: #b6c6ce; 
-    border-radius: 0.5em;
-    border: 0px;
-    padding: 0.5rem;
-    margin: 0.5rem;
-}
-
-.log{
-    background-color: #1e79a6;  
-    border-radius: 0.9em;   
-    border: 0px;
-    width: auto;
-    padding: 0.5rem;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-    
-    color: white;
-    font-weight: bold;
-}
-
-.reco-workouts{
-    display: flex;
-    position: relative;
-    gap: 1vw;
-    background-color: white;
-    border-radius: 1vw;
-    padding: 2vh;
-}
-
-.reco-workouts .card  {
-    width: 100%;
-    height: 100%;
-
-    box-sizing: border-box;
-    background-color: #1E79A6;
-    overflow: hidden;
-    position: relative;
-
-    background-color: #1E79A6;
-    background-size: cover;
-}
-
-.reco-workouts .card > img {
-    position: absolute;
-    top: 0;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background-size: cover;
-}
-
-.reco-workouts .card > div {
-  position: absolute;
-  z-index: 1;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-
-  color: white;
-  background-color: #1E79A6;
-  padding: 0.5rem 2rem;
-  border-radius: 1rem;
-  text-align: center;
-  white-space: nowrap;
-}
-
+/* MAIN RIGHT COLUMN ------------------ */
 .main-right{
     width: 25%;
     height: 100%;
@@ -309,6 +215,57 @@ body{
 
 }
 
+.goals > div > p{
+    text-align: left;
+}
+
+.goals > div > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* =============== COMPONENTS =============== */
+.card{
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+    border-radius: 1vw;
+    padding: 1vw;
+    line-height: 0;
+
+    overflow: hidden;
+}
+
+.card .txt-input {
+    width: 6vw;
+}
+
+/* textbox design */
+.txt-input{
+    background-color: #b6c6ce; 
+    border-radius: 0.5em;
+    border: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+/* log button */
+.log{
+    background-color: #1e79a6;  
+    border-radius: 0.9em;   
+    border: 0px;
+    width: auto;
+    padding: 0.5rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    
+    color: white;
+    font-weight: bold;
+}
+
 .progress-bar {
   width: 100%;
   height: 1.5rem;
@@ -324,11 +281,68 @@ body{
   transition: width 0.3s ease;
 }
 
-.goals > div > p{
-    text-align: left;
+/* MAIN HEADING ----------------------- */
+.main-heading{
+    padding-left: 1em;
 }
 
-.goals > div > div{
-    display: flex;
-    justify-content: space-between;
+.main-heading > h1 {
+    font-size: 13vh;
+    line-height: 0.82;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
+
+.main-heading > h2 {
+    font-size: 2vw;
+    line-height: 0;
+}
+
+/* ------------------------------------- */
+
+/* WORKOUTS ----------------------------- */
+.reco-workouts{
+    background-color: white;
+}
+
+.reco-workouts .card  {
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    background-color: #1E79A6;
+    overflow: hidden;
+    position: relative;
+
+    background-color: #1E79A6;
+    background-size: cover;
+}
+
+/* WORKOUT IMG */
+.reco-workouts .card > img {
+    position: absolute;
+    top: 0;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+}
+
+/* WORKOUT TEXT */
+.reco-workouts .card > div {
+  position: absolute;
+  z-index: 1;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  color: white;
+  background-color: #1E79A6;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  white-space: nowrap;
+}
+/* --------------------------------- */

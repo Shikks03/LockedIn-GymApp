@@ -9,51 +9,32 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="center"> <!-- invisible, just to center both containers -->
-        <div class="sidebar">
-            <div class="sidebar-top"> <!-- top part ng sidebar ksi may space ung top and bottom -->
-                <div class="lofit">
-                    <div class="lofit-logo"></div><p class="lofit-txt">Lofit</p>
+    <div class="flex-row flex-child center">
+        <!-- SIDEBAR -->
+        <div class="flex-col flex-child center-align padrad sidebar">
+
+            <div class="flex-col sidebar-top">
+                <div class="center-align lofit">
+                    <div class="lofit-logo"></div>
+                    <p class="lofit-txt">Lofit</p>
                 </div>
-                <br>
-                <div class="sidebar-btn">
-                    <div class="icon tempicon"></div> <p>Home</p>
-                    <!-- <img src="/assets/icons/home.jpg" alt="home">  -->
-                    
-                </div>
-                <div class="sidebar-btn">
-                    <div class="icon tempicon"></div> <p>Workout</p>
-                    <!-- <img src="/assets/icons/home.jpg" alt="workout">  -->
-                    
-                </div>
-                <div class="sidebar-btn">
-                    <div class="icon tempicon"></div> <p>Goals</p>
-                    <!-- <img src="/assets/icons/home.jpg" alt="goals">  -->
-                    
-                </div>
+                <div class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Home</p></div>
+                <div class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Workout</p></div>
+                <div class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Goals</p></div>
             </div>
 
-
-
-            <div class="sidebar-bot"> <!-- bottom sidebar -->
-                <div class="sidebar-btn">
-                    <div class="icon tempicon"></div> <p>User</p>
-                    <!-- <img src="/assets/icons/home.jpg" alt="user">  -->
-                </div>
-
-                <div class="sidebar-btn">
-                    <div class="icon tempicon"></div> <p>Sign Out</p>
-                    <!-- <img src="/assets/icons/home.jpg" alt="signout">  -->
-                    
-                </div>
+            <div class="flex-col sidebar-bot">
+                <div class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>User</p></div>
+                <div class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Sign Out</p></div>
             </div>
         </div>
 
 
 
-
-        <div class="main-content">
-                <div class="main-left">
+        <!-- MAIN CONTENT -->
+        <div class="flex-row flex-child padrad main-content">
+                <!-- LEFT COLUMN -->
+                <div class="flex-col main-left">
                     <div class="main-heading">
                         <h2>Hello, User!</h2> <!-- INSERT PHP -->
                         <h1>Health Overview</h1>
@@ -61,7 +42,7 @@
 
                     <div class="main-container">
                         <h3>Quick log</h3>
-                        <div class="quicklog">
+                        <div class="flex-row quicklog">
                             <div class="card">
                                 <p>Update</p><!-- INSERT PHP -->
                                 <p><input type="text" class="txt-input" placeholder="some php shi"></p>
@@ -77,33 +58,30 @@
                                 <p><input type="text" class="txt-input" placeholder="some php shi"></p>
                                 <input type="submit" class="log">
                             </div>
+                            <!-- ADD MORE LOGS HERE, DIRECTLY PROPORTIONAL TO AMT OF GOALS -->
                         </div>
+
                         <h3>Recommended workouts</h3>
-                        <div class="reco-workouts">
+                        <div class="flex-row padrad reco-workouts">
                             <div class="card">
-                                <div>
-                                    <h2>Workout</h2>
-                                </div>
+                                <div><h2>Workout</h2></div>
                                 <img src="../assets/icons/excercise.jpg" alt="">
                             </div>
                             <div class="card">
-                                <div>
-                                    <h2>Workout</h2>
-                                </div>
+                                <div><h2>Workout</h2></div>
                                 <img src="../assets/icons/excercise.jpg" alt="">
                             </div>
                             <div class="card">
-                                <div>
-                                    <h2>Workout</h2>
-                                </div>
+                                <div><h2>Workout</h2></div>
                                 <img src="../assets/icons/excercise.jpg" alt="">
                             </div>
+                            <!-- ADD MORE WORKOUT HERE -->
                         </div>
                     </div>
                 </div>
 
 
-
+                <!-- RIGHT COLUMN -->
                 <div class="main-right">
                     <div class="main-container">
                         <div class="card">
@@ -115,8 +93,9 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <br>
+
+                        <br><br>
+                        
                         <h3>Goals</h3>
                         <div class="card">
                             <div class="goals">
@@ -130,14 +109,13 @@
                                         <p>To</p>
                                     </div>
                                 </div>
-
+                            <!-- ADD MORE GOALS HERE -->
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
