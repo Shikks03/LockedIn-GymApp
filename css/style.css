@@ -1,8 +1,7 @@
-/*imma be honest idk what vw is but its scalable and it works*/
-
 h3{
     font-weight: bold;
     line-height: 0;
+    font-size: 1.5em;
 }
 
 html, 
@@ -31,7 +30,8 @@ body{
     box-sizing: border-box;
 }
 
-.center > div{
+.sidebar,
+.main-content{
     height: 100%;
     /* margin-bottom: 2rem; */
     box-sizing: border-box;
@@ -43,13 +43,15 @@ body{
     width: 14%;
     text-align: center;
     border-radius: 2vw;
-    padding: 2vw;
+    padding: 1.3vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center; /* vertical center for texts */
 }
 
-.sidebar > div{
+.sidebar-top,
+.sidebar-bot{
     /*border: 1px solid red;  debug */
     display: flex;
     flex-direction: column;
@@ -58,8 +60,8 @@ body{
     
 }
 
-.sidebar > div > div{ /* all div children of sidebar */
-    /*border: 1px solid blue;  debug */
+.sidebar-btn{ /* all div children of sidebar */
+    /* border: 1px solid blue; */
     border-radius: 2vw;
     padding: 1em;
     overflow: hidden; /* so that when resized, only logos appear */
@@ -70,13 +72,47 @@ body{
     text-align: left;
 }
 
-.sidebar > div > div > img { /* all img children of div, basically to round them */
-    /* border: 1px solid blue;  debug */
+
+/* temp */
+.icon{
     width: 2em;
     height: 2em;
-    border-radius: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
+.tempicon{ /* all img children of div, basically to round them */
+    background-image: url("../assets/icons/home.jpg");
+    
+}
+.icon-user{
+    background-image: url("../assets/icons/user.png");
+    width: 3em;
+    height: 3em;
+}
+
+/* logo */
+.lofit {
+    border-radius: 2vw;
+    overflow: hidden; /* so that when resized, only logos appear */
+    height: 3em;
+    display: flex;
+    align-items: center; /* vertical center for texts */
+    justify-content: left;
+    text-align: left;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.lofit-logo{
+    width: 2em;
+    height: 2em;
+    background-image: url("../assets/icons/lofit-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* sidebar font settings */
 .sidebar > div > div > p { /* space for text pra di dikit ung img, theres prob better ways to do this*/
     padding-top: 0.6vh;
     padding-left: 0.5vw;
@@ -89,44 +125,42 @@ body{
 
 
 .main-content{
-    /*border: 1px solid green;  debug */
+
+    /*border: 1px solid red;  debug */
     width: 86%; /*for flex with sidebar*/
     border-radius: 2vw;
     padding: 2vw;
 
+    display: flex; /* make containers go nxt to each other */
+    gap: 1.2vw;
+    position: relative;
+
+    height: 100%;
     background-color: white;
 }
 
-.main-margins{
-    border: 1px solid red; /* debug */
+.main-container{ /*generic main container style*/
+    border-radius: 2vw;
+    padding: 2em;
+    padding-top: 1.2em;
+    height: 100%;
 
-    display: flex; /* make containers go nxt to each other */
-    gap: 1.2vw;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #e6e9f1, #cad4df);
+}
 
-    position: relative;
+.main-container > div{
     height: 100%;
     box-sizing: border-box;
 }
 
-.main-margins > div{
+.main-left
+.main-right{
     border: 1px solid rgb(255, 22, 228); /* debug */
-    
-    height: 100%;
+
     box-sizing: border-box;
 }
-
-.main-left-container1 > h1 {
-    font-size: 13vh;
-    line-height: 0.82;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-}
-
-.main-left-container1 > h2 {
-    font-size: 2vw;
-    line-height: 0;
-}
-
 
 .main-left{
     width: 75%;
@@ -136,43 +170,28 @@ body{
     flex-direction: column;
 }
 
-.main-left > div{
-    border: 1px solid orange; /* debug */
-    box-sizing: border-box;
-}
-
-.main-left-container1{
-    flex: 1;
-}
-
-.main-left-container2{
-    border-radius: 2vw;
-    flex: 2;
-    padding: 3vh;
-    padding-top: 2.2vh;
-
-    background: linear-gradient(180deg, #e6e9f1, #cad4df);
-}
-
-
-.main-right{
-    width: 25%;
-}
-
-.main-right-container{
-    border: 1px solid orange; /* debug */
-    border-radius: 2vw;
-    height: 100%;
-    width: 18vw;
-
-    background: linear-gradient(180deg, #e6e9f1, #cad4df);
-    box-sizing: border-box;
+.main-left > div{ /*make it columns*/
+    /*border: 1px solid orange;  debug */
     
+    box-sizing: border-box;
+}
+
+.main-heading > h1 {
+    font-size: 13vh;
+    line-height: 0.82;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.main-heading > h2 {
+    font-size: 2vw;
+    line-height: 0;
 }
 
 .quicklog{
     display: flex;
     flex-direction: row;
+    gap: 1vw;
 }
 
 .quicklog > div {
@@ -180,10 +199,16 @@ body{
 }
 
 .card{
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+
     background-color: white;
     border-radius: 1vw;
     padding: 1vw;
     line-height: 0;
+
+    overflow: hidden;
 }
 
 .card .txt-input {
@@ -211,4 +236,99 @@ body{
     font-weight: bold;
 }
 
-/*Notes: use inline styles for simplicity???*/
+.reco-workouts{
+    display: flex;
+    position: relative;
+    gap: 1vw;
+    background-color: white;
+    border-radius: 1vw;
+    padding: 2vh;
+}
+
+.reco-workouts .card  {
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    background-color: #1E79A6;
+    overflow: hidden;
+    position: relative;
+
+    background-color: #1E79A6;
+    background-size: cover;
+}
+
+.reco-workouts .card > img {
+    position: absolute;
+    top: 0;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+}
+
+.reco-workouts .card > div {
+  position: absolute;
+  z-index: 1;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  color: white;
+  background-color: #1E79A6;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.main-right{
+    width: 25%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inline{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+
+.main-right .card:nth-child(1){
+    height: 15%;
+}
+
+.main-right .card:nth-child(2){
+    height: 5%;
+
+}
+
+.progress-bar {
+  width: 100%;
+  height: 1.5rem;
+  background-color: #ccc;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #1E79A6;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.goals > div > p{
+    text-align: left;
+}
+
+.goals > div > div{
+    display: flex;
+    justify-content: space-between;
+}
