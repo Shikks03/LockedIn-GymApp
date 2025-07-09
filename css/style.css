@@ -90,10 +90,16 @@ h3{
     align-items: center;
     justify-content: left;
     text-align: left;
+    font-size: 1em;
+    font-weight: bold;
+
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
 }
 
 /* LIGHT TWEAKS */
-.sidebar > div > div > p {
+.sidebar-btn > p ,
+.lofit-txt{
     padding-top: 0.6vh;
     color: white;
 }
@@ -133,7 +139,7 @@ h3{
     
     text-align: left;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 3em;
 }
 
 .lofit-logo{
@@ -224,6 +230,9 @@ h3{
     justify-content: space-between;
 }
 
+.quicklog{
+    left: 0;
+}
 
 /* =============== COMPONENTS =============== */
 .card{

@@ -18,14 +18,14 @@
                     <div class="lofit-logo"></div>
                     <p class="lofit-txt">Lofit</p>
                 </div>
-                <div class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Home</p></div>
-                <div class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Workout</p></div>
-                <div class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Goals</p></div>
+                <button type="button" class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Home</p></button>
+                <button type="button" class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Workout</p></button>
+                <button type="button" class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Goals</p></button>
             </div>
 
             <div class="flex-col sidebar-bot">
-                <div class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>User</p></div>
-                <div class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Sign Out</p></div>
+                <button type="button" class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>User</p></button>
+                <button type="button" class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Sign Out</p></button>
             </div>
         </div>
 
@@ -42,7 +42,7 @@
 
                     <div class="main-container">
                         <h3>Quick log</h3>
-                        <div class="flex-row quicklog">
+                        <div class="flex-row center-align quicklog">
                             <div class="card">
                                 <p>Update</p><!-- INSERT PHP -->
                                 <p><input type="text" class="txt-input" placeholder="some php shi"></p>
