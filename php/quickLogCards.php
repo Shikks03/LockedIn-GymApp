@@ -30,7 +30,7 @@ for ($i = 0; $i < count($goals); $i++) {
     // card display
     echo '<form method="POST">'; // wrap each card in its own form
     echo '<div class="card">';
-    echo '<p>' . htmlspecialchars($goals[$i]["name"]) . '</p>';
+    echo '<p>' . $goals[$i]["name"] . '</p>'; 
     echo '<p><input type="text" class="txt-input" name="progress" placeholder="record:" required></p>'; // Changed text to number para mas valid yung user input
     echo '<input type="hidden" name="goal_id" value="' . $goals[$i]['goal_id'] . '">'; // HIDDEN JUST TO TRACK GOAL ID AND UPDATE TO CORRESPONDING FIELD
     echo '<input type="submit" class="log" value="Update">';
