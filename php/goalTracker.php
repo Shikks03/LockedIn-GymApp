@@ -1,5 +1,7 @@
 <?php
-    require('../sql/goals.php'); // Include the goals array
+    
+    require('../sql/goals.php'); // This loads the $goals array
+
 
     $goalCounter = 0;
     

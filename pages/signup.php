@@ -18,14 +18,14 @@
                     <div class="lofit-logo"></div>
                     <p class="lofit-txt">Lofit</p>
                 </div>
-                    <button onclick="document.location='../index.php'" class="sidebar-btn" id="home-btn"><div class="icon tempicon"></div> <p>Home</p></button>
-                    <button onclick="document.location='../pages/workout.php'" class="sidebar-btn" id="workout-btn"><div class="icon tempicon"></div> <p>Workout</p></button>
-                    <button onclick="document.location='../pages/goals.php'" class="sidebar-btn" id="goals-btn"><div class="icon tempicon"></div> <p>Goals</p></button>
+                <button onclick="document.location='../index.php'" class="sidebar-btn" id="home-btn"><div class="icon tempicon"></div> <p>Home</p></button>
+                <button onclick="document.location='../pages/workout.php'" class="sidebar-btn" id="workout-btn"><div class="icon tempicon"></div> <p>Workout</p></button>
+                <button onclick="document.location='../pages/goals.php'" class="sidebar-btn" id="goals-btn"><div class="icon tempicon"></div> <p>Goals</p></button>
             </div>
 
             <div class="flex-col sidebar-bot">
-                <button type="button" class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>User</p></button>
-                <button type="button" class="flex-row sidebar-btn"><div class="icon tempicon"></div> <p>Sign Out</p></button>
+                <button type="button" class="sidebar-btn"><div class="icon tempicon"></div> <p>Settings</p></button>
+                <button type="button" class="sidebar-btn"><div class="icon tempicon"></div> <p>Sign Out</p></button>
             </div>
         </div>
 
@@ -43,13 +43,39 @@
                     <div class="main-container">
                         <h3>Quick log</h3>
                         <div class="flex-row center-align quicklog">
-                            <?php include('../php/quickLogCards.php'); ?>
+                            <div class="card">
+                                <p>Update</p><!-- INSERT PHP -->
+                                <p><input type="text" class="txt-input" placeholder="some php shi"></p>
+                                <input type="submit" class="log">
+                            </div>
+                            <div class="card">
+                                <p>Update</p><!-- INSERT PHP -->
+                                <p><input type="text" class="txt-input" placeholder="some php shi"></p>
+                                <input type="submit" class="log">
+                            </div>
+                            <div class="card">
+                                <p>Update</p><!-- INSERT PHP -->
+                                <p><input type="text" class="txt-input" placeholder="some php shi"></p>
+                                <input type="submit" class="log">
+                            </div>
                             <!-- ADD MORE LOGS HERE, DIRECTLY PROPORTIONAL TO AMT OF GOALS -->
                         </div>
 
                         <h3>Recommended workouts</h3>
                         <div class="flex-row padrad reco-workouts">
-                            <?php include('../php/recommendedWorkouts.php'); ?>
+                            <div class="card">
+                                <div><h2>Workout</h2></div>
+                                <img src="../assets/icons/excercise.jpg" alt="">
+                            </div>
+                            <div class="card">
+                                <div><h2>Workout</h2></div>
+                                <img src="../assets/icons/excercise.jpg" alt="">
+                            </div>
+                            <div class="card">
+                                <div><h2>Workout</h2></div>
+                                <img src="../assets/icons/excercise.jpg" alt="">
+                            </div>
+                            <!-- ADD MORE WORKOUT HERE -->
                         </div>
                     </div>
                 </div>
@@ -63,9 +89,7 @@
                                 <div class="icon icon-user"></div>
                                 <div>
                                     <h2>User</h2>
-                                    <!-- pakiindent to the left side ung h2 and h3 kasi i think nasa right side sila nakaindent
-                                    or sa middle since pag 2 digits na ung level, nagmomove ung h2 sa right side. -->
-                                    <h3>Lvl <?php include('../php/levelCompute.php')?></h3>
+                                    <h3>Lvl 1</h3> <!-- INSERT PHP FOR LVL -->
                                 </div>
                             </div>
                         </div>
@@ -75,8 +99,7 @@
                         <h3>Goals</h3>
                         <div class="card">
                             <div class="goals">
-                                <?php include('../php/goalTracker.php'); ?>
-                                <!-- <div>
+                                <div>
                                     <p><strong>Weight</strong></p>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 60%;"></div>
@@ -85,7 +108,7 @@
                                         <p>From</p>
                                         <p>To</p>
                                     </div>
-                                </div> -->
+                                </div>
                             <!-- ADD MORE GOALS HERE -->
 
                             </div>

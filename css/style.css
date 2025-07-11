@@ -92,9 +92,17 @@ h3{
     text-align: left;
     font-size: 1em;
     font-weight: bold;
+    cursor: pointer;
 
     background-color: rgba(255, 255, 255, 0);
     border: 0;
+
+    position: relative;
+    display: flex; 
+    flex-direction: row;
+    gap: 1em;
+
+    box-sizing: border-box;
 }
 
 /* LIGHT TWEAKS */
@@ -355,3 +363,9 @@ h3{
   white-space: nowrap;
 }
 /* --------------------------------- */
+
+
+/* SPECIFIC */
+#home-btn{
+    background-color: #08102b54;
+}
