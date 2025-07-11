@@ -9,31 +9,17 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="flex-row flex-child center">
-        <div class="img"></div>
-        <div class="flex-col flex-child padrad main-content">
-            <!-- LEFT COLUMN -->
-                <div class="main-heading">
-                    <h1>Workouts</h1>
+    <div class="flex-child center">
+        <div class="flex-row main-content padrad index">
+            <div class="flex-child index-img"> &nbsp </div>
+            <div class="flex-child index-child">
+                <div class="login">
+                    <h3>Welcome!</h3>
+                    <p>subheading</p>
+
+                    <p>User: </p>
                 </div>
-                <div class="main-container">
-                    <h3>Recommended workouts</h3>
-                    <div class="flex-row padrad reco-workouts">
-                        <div class="card">
-                            <div><h2>Workout</h2></div>
-                            <img src="../assets/icons/excercise.jpg" alt="">
-                        </div>
-                        <div class="card">
-                            <div><h2>Workout</h2></div>
-                            <img src="../assets/icons/excercise.jpg" alt="">
-                        </div>
-                        <div class="card">
-                            <div><h2>Workout</h2></div>
-                            <img src="../assets/icons/excercise.jpg" alt="">
-                        </div>
-                        <!-- ADD MORE WORKOUT HERE -->
-                    </div>
-                </div>
+            </div>
         </div>
     </div>
 </body>
