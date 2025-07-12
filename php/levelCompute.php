@@ -25,8 +25,8 @@ try {
     $stmt = $pdo->prepare($query);
     $stmt->execute([$level,6/*,$_SESSION[user_id]*/]); //remove 6 and uncomment when SESSIONS are implemented
 
-    echo "Level: $level" . "<br>";
-    echo "XP points: $remainingExp/$requiredExp";
+    echo "$level" . "<br>";
+    //echo "XP points: $remainingExp/$requiredExp";
 } catch (PDOException $e) {
     die("Database Connection Error!: " . $e->getMessage());
 }
