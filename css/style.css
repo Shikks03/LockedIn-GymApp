@@ -393,12 +393,11 @@ h3{
     margin-right: 0;
 
     height: 100vh;
-    width: 55%;
+    width: 100%;
     background: linear-gradient(180deg, #8d47ef, #45aeff);
 }
 
 .index > div{
-    border: 1px solid red;
     display: flex;
 
     align-items: center;
@@ -406,10 +405,63 @@ h3{
     text-align: center;
 }
 
-.login{
+.index-child{
     position: relative;
 
     align-items: center;
-    justify-content: center;
     text-align: center;
+    width: 100%;
+}
+
+.login > div > h1{
+    line-height: 0;
+    font-size: 3em;
+}
+
+.login .txt-input{
+    width: 20em;
+}
+
+.login .log{
+    width: 8em;
+}
+
+.login{
+    align-content: center;
+}
+
+.login > div:nth-child(2) > div{
+    justify-content: end;
+}
+
+.signup{
+    align-content: center;
+}
+
+.signup-child{
+    width: 100%;
+}
+
+.signup-child > div{
+    line-height: 0;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.signup-child > div > div{
+    line-height: 0;
+    text-align: left;
+}
+
+.signup-child .txt-input{
+    margin-left: 0;
+    margin-top: 0.2em;  
+}
+
+.smol{
+    width: 5em;
+}
+
+.full{
+    width: 100%;
 }
