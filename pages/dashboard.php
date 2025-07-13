@@ -62,9 +62,9 @@ $user = getCurrentUser(); //gets current user
 
 
                 <!-- RIGHT COLUMN -->
-                <div class="main-right">
-                    <div class="main-container">
-                        <div class="card">
+                <div class="flex-child main-right">
+                    <div class="flex-col flex-child main-container">
+                        <div class="card user" >
                             <div class="inline">
                                 <div class="icon icon-user"></div>
                                 <div>
@@ -75,11 +75,9 @@ $user = getCurrentUser(); //gets current user
                                 </div>
                             </div>
                         </div>
-
-                        <br><br>
-                        
+                        <br>
                         <h3>Goals</h3>
-                        <div class="card">
+                        <div class="card goal">
                             <div class="goals">
                                 <?php include('../php/goalTracker.php'); ?>
                                 <!-- <div>
@@ -94,6 +92,18 @@ $user = getCurrentUser(); //gets current user
                                 </div> -->
                             <!-- ADD MORE GOALS HERE -->
 
+                            </div>
+                        </div>
+
+                        <h3>Quick add</h3>
+                        <div class="card quick-add">
+                            <div class="flex-child flex-col">
+                                <div class="center-align"><p>Goal name:</p><input type="text" class="txt-input" size="20"></div>
+                                <div class="flex-row center-align">
+                                    <div><p>From: </p><input type="text" class="txt-input" size="2"></div>
+                                    <div><p>To: </p><input type="text" class="txt-input" size="2"></div>
+                                </div>
+                                <button onclick="" class="log" id="addgoal">Add Goal</button>
                             </div>
                         </div>
                     </div>
