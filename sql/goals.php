@@ -1,13 +1,16 @@
 <?php
+require_once(__DIR__ . '/../includes/session.php');
+requireLogin(); 
+$user = getCurrentUser(); // 
 $goals = [];
 
 try {
     require_once(__DIR__ . '/../sqlConnection/database.php');
 
     //query part
-    $query = "SELECT * FROM goals WHERE user_id = 6"; //substite ? with the logged in user //CHANGE 6 TO ? PAG MAY SESSION NA
+    $query = "SELECT * FROM goals WHERE user_id = ?"; 
     $stmt = $pdo->prepare($query);
-    $stmt->execute(/*[$_SESSION['user_id']]*/); //UNCOMMENT THIS PAG GUMAGANA NA YUNG SESSION
+    $stmt->execute([$user['user_id']]); 
     $results =$stmt->fetchAll(PDO::FETCH_ASSOC); //this will convert the database into an associative array
 
     //put the results into an associative array for easier retrieval on goalTracker.php

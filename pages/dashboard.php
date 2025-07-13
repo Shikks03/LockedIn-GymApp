@@ -1,3 +1,9 @@
+<?php
+require_once(__DIR__ . '/../includes/session.php');
+requireLogin();
+$user = getCurrentUser(); //gets current user
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +42,7 @@
                 <!-- LEFT COLUMN -->
                 <div class="flex-col main-left">
                     <div class="main-heading">
-                        <h2>Hello, User!</h2> <!-- INSERT PHP -->
+                        <h2>Hello, <?php echo htmlspecialchars($user['username']); ?>!</h2> <!-- INSERT PHP -->
                         <h1>Health Overview</h1>
                     </div>
 
@@ -62,7 +68,7 @@
                             <div class="inline">
                                 <div class="icon icon-user"></div>
                                 <div>
-                                    <h2>User</h2>
+                                    <h2><?php echo htmlspecialchars($user['username']); ?></h2>
                                     <!-- pakiindent to the left side ung h2 and h3 kasi i think nasa right side sila nakaindent
                                     or sa middle since pag 2 digits na ung level, nagmomove ung h2 sa right side. -->
                                     <h3>Lvl <?php include('../php/levelCompute.php')?></h3>

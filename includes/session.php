@@ -13,7 +13,9 @@ function isLoggedIn() {
 function getCurrentUser() {
     if (isLoggedIn()) {
         return [
-            'id' => $_SESSION['user_id'],
+            'user_id' => $_SESSION['user_id'],
+            'username' => $_SESSION['username'],
+            'email' => $_SESSION['email']
         ];
     }
     return null;
@@ -21,7 +23,7 @@ function getCurrentUser() {
 
 // Function to login user (set session variables)
 function loginUser($user_data) {
-    $_SESSION['user_id'] = $user_data['id'];
+    $_SESSION['user_id'] = $user_data['user_id'];
     $_SESSION['username'] = $user_data['username'];
     $_SESSION['email'] = $user_data['email'];
     $_SESSION['login_time'] = time();
@@ -46,7 +48,7 @@ function logoutUser() {
 }
 
 // Function to require login (redirect if not logged in)
-function requireLogin($redirect_to = 'index.php') {
+function requireLogin($redirect_to = 'login.php') {
     if (!isLoggedIn()) {
         header("Location: $redirect_to");
         exit;

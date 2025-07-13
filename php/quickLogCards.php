@@ -1,4 +1,10 @@
 <?php
+
+require_once(__DIR__ . '/../includes/session.php');
+requireLogin(); // Force login
+
+$user = getCurrentUser();
+
 try {
     require('../sql/goals.php'); // Include the goals array
     require_once(__DIR__ . '/../sqlConnection/database.php');
@@ -12,7 +18,7 @@ try {
             // UPDATE PROGRESS
             $query = "UPDATE goals SET current = ? WHERE user_id = ? AND goal_id = ?";
             $stmt = $pdo->prepare($query);
-            $stmt->execute([$current, 6, $goalId]); // Static user_id for now; replace with session
+            $stmt->execute([$current, $user['user_id'], $goalId]); 
         }
     }
 } catch (PDOException $e) {

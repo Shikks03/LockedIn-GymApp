@@ -1,11 +1,17 @@
 <!-- to calculate the level based on the xp -->
 <?php
+require_once(__DIR__ . '/../includes/session.php');
 include(__DIR__ . '/../sqlConnection/database.php');
+requireLogin(); // Force login
+
+$user = getCurrentUser();
+
+
 try {
     //RETRIEVE XP FROM DATABASE
-    $query = 'SELECT xp FROM users WHERE user_id = 6'; //change to ? id session is implemented
+    $query = 'SELECT xp FROM users WHERE user_id = ?'; //change to ? id session is implemented
     $stmt = $pdo->prepare($query);
-    $stmt->execute(/*[$_SESSION[user_id]*/);
+    $stmt->execute([$user['user_id']]);
     $exp = $stmt->fetchColumn();
 
     //INITIAL VALUES
@@ -23,7 +29,7 @@ try {
     //UPDATE LEVEL BASED ON THE COMPUTED ONE
     $query = 'UPDATE users SET level = ? WHERE user_id = ?'; 
     $stmt = $pdo->prepare($query);
-    $stmt->execute([$level,6/*,$_SESSION[user_id]*/]); //remove 6 and uncomment when SESSIONS are implemented
+    $stmt->execute([$level, $user['user_id']]); 
 
     echo "$level" . "<br>";
     //echo "XP points: $remainingExp/$requiredExp";
