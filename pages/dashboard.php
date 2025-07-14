@@ -80,30 +80,29 @@ $user = getCurrentUser(); //gets current user
                         <div class="card goal">
                             <div class="goals">
                                 <?php include('../php/goalTracker.php'); ?>
-                                <!-- <div>
-                                    <p><strong>Weight</strong></p>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 60%;"></div>
-                                    </div>
-                                    <div>
-                                        <p>From</p>
-                                        <p>To</p>
-                                    </div>
-                                </div> -->
-                            <!-- ADD MORE GOALS HERE -->
-
                             </div>
                         </div>
 
                         <h3>Quick add</h3>
                         <div class="card quick-add">
                             <div class="flex-child flex-col">
-                                <div class="center-align"><p>Goal name:</p><input type="text" class="txt-input" size="20"></div>
-                                <div class="flex-row center-align">
-                                    <div><p>From: </p><input type="text" class="txt-input" size="2"></div>
-                                    <div><p>To: </p><input type="text" class="txt-input" size="2"></div>
-                                </div>
-                                <button onclick="" class="log" id="addgoal">Add Goal</button>
+                                <form id="quickAddForm">
+                                    <div class="center-align">
+                                        <p>Goal name:</p>
+                                        <input type="text" class="txt-input" name="goalName" id="goalName" size="20">
+                                    </div>
+                                    <div class="flex-row center-align">
+                                        <div>
+                                            <p>From: </p>
+                                            <input type="text" class="txt-input" name="fromValue" id="fromValue" size="2">
+                                        </div>
+                                        <div>
+                                            <p>To: </p>
+                                            <input type="text" class="txt-input" name="toValue" id="toValue" size="2">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="log" id="addgoal">Add Goal</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -111,5 +110,28 @@ $user = getCurrentUser(); //gets current user
             </div>
         </div>
     </div>
+    <script>
+    document.getElementById('quickAddForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+
+        fetch('../php/quickAdd.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data); // Show response from PHP
+            this.reset(); // Clear the form
+
+            // Fetch updated quick log cards
+            fetch('../php/quickLogCards.php')
+                .then(response => response.text())
+                .then(cards => {
+                    document.querySelector('.quicklog').innerHTML = cards;
+                });
+        });
+    });
+    </script>
 </body>
 </html>
