@@ -122,7 +122,7 @@ $user = getCurrentUser(); //gets current user
         .then(response => response.text())
         .then(data => {
             alert(data); // Show response from PHP
-            this.reset(); // Clear the form
+            location.reload(); // Clear the form
 
             // Fetch updated quick log cards
             fetch('../php/quickLogCards.php')
