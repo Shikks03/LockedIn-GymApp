@@ -25,7 +25,7 @@
 
             <div class="flex-col sidebar-bot">
                 <button type="button" class="sidebar-btn"><div class="icon tempicon"></div> <p>Settings</p></button>
-                <button type="button" class="sidebar-btn"><div class="icon tempicon"></div> <p>Sign Out</p></button>
+                <button onclick="document.location='../php/logout.php'" class="sidebar-btn"><div class="icon tempicon"></div> <p>Sign Out</p></button>
             </div>
         </div>
 
