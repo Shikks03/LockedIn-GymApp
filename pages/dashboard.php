@@ -48,7 +48,7 @@ $user = getCurrentUser(); //gets current user
 
                     <div class="main-container">
                         <h3>Quick log</h3>
-                        <div class="flex-row center-align quicklog">
+                        <div class="flex-row quicklog">
                             <?php include('../php/quickLogCards.php'); ?>
                             <!-- ADD MORE LOGS HERE, DIRECTLY PROPORTIONAL TO AMT OF GOALS -->
                         </div>

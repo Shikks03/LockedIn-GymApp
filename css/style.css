@@ -242,8 +242,14 @@ h3{
     justify-content: space-between;
 }
 
-.quicklog{
-    left: 0;
+.quicklog {
+    display: flex;
+    flex-wrap: wrap;              /* Allow wrapping if many cards */
+    justify-content: flex-start;  /* Align cards to the left */
+    align-items: flex-start;
+    gap: 1em;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* =============== COMPONENTS =============== */
