@@ -37,13 +37,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $activity,
                 $goal
             ]);
+            
+            //DELETE THIS KUNG AYAW NG INITIAL GOAL BASED SA IDEAL WEIGHT
+            require_once(__DIR__ . '/../includes/session.php');
 
+            // Get the ID of the user we just inserted
+            $newUserId = $pdo->lastInsertId();
+
+            try {
+                $query = "INSERT INTO goals (user_id, goal_name, base, current, target, active) VALUES (?, ?, ?, ?, ?, ?);";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute([$newUserId, "Weight", $weight, $weight, $ideal_weight, 1]);
+            } catch (PDOException $e) {
+                die("Insertion Error! : " . $e->getMessage());
+            }
+            //DELETE UNTIL HERE
+            
             // Clear session
             unset($_SESSION['reg_username'], $_SESSION['reg_email'], $_SESSION['reg_password']);
 
             // Redirect on success
             header("Location: ../index.php?registered=1");
             exit;
+
         } catch (PDOException $e) {
             echo "<script>alert('Database error: " . $e->getMessage() . "');</script>";
         }
