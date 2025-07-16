@@ -9,6 +9,8 @@
      *
      * Author: Russel Rome Nadales
      * Date: July 14, 2025
+     * Last Modified: July 16, 2025
+     * 
      */
 
     // Avoid including workout.php inside this logic file to prevent recursive loading
@@ -122,8 +124,16 @@
             "Lower the weights slowly to the starting position.",
         ], ["Upper Trapezius"], "assets/workouts/dumbbell_shrugs.jpg"),
 
+        new Workout(3, "Cable Upright Rows", "Traps", [
+            "Stand facing a cable machine with a straight bar attachment set at low pulley position.",
+            "Grip the bar with an overhand grip, hands closer than shoulder-width apart.",
+            "Pull the bar straight up along your body until it reaches your lower chest.",
+            "Keep your elbows higher than your wrists throughout the movement.",
+            "Slowly lower the bar back to the starting position with control.",
+        ], ["Upper Trapezius", "Middle Trapezius", "Rhomboids"], "assets/workouts/cable_upright_rows.webp"),
+
         // Shoulders
-        new Workout(3, "Dumbbell Shoulder Press", "Shoulders", [
+        new Workout(4, "Dumbbell Shoulder Press", "Shoulders", [
             "Sit on a bench with back support, holding a dumbbell in each hand at shoulder height with your palms facing forward.",
             "Brace your core and press both dumbbells upward until your arms are fully extended overhead.",
             "Avoid locking your elbows at the top; pause briefly.",
@@ -131,7 +141,7 @@
             "Repeat for the desired number of repetitions.",
         ], ["Deltoid Muscles"], "assets/workouts/dumbbell_shoulder_press.jpg"),
 
-        new Workout(4, "Lateral Raises", "Shoulders", [
+        new Workout(5, "Lateral Raises", "Shoulders", [
             "Stand with a dumbbell in each hand, arms at your sides, palms facing inward.",
             "Keep a slight bend in your elbows and engage your core.",
             "Lift both arms out to the sides until they reach shoulder level.",
@@ -139,8 +149,16 @@
             "Pause at the top, then slowly lower the dumbbells back to your sides.",
         ], ["Lateral Deltoids"], "assets/workouts/lateral_raises.jpg"),
 
+        new Workout(6, "Rear Delt Flyes", "Shoulders", [
+            "Stand with feet hip-width apart, holding a dumbbell in each hand with a neutral grip.",
+            "Hinge at the hips and lean forward slightly, keeping your back straight.",
+            "With arms slightly bent, lift the weights out to your sides until they reach shoulder level.",
+            "Focus on squeezing your shoulder blades together at the top.",
+            "Slowly lower the weights back to the starting position.",
+        ], ["Rear Deltoids", "Rhomboids"], "assets/workouts/rear_delt_flyes.webp"),
+
         // Biceps
-        new Workout(5, "Barbell Bicep Curl", "Biceps", [
+        new Workout(7, "Barbell Bicep Curl", "Biceps", [
             "Stand with feet shoulder-width apart, holding a barbell with an underhand grip (palms facing up).",
             "Start with the bar at arm's length, resting against your thighs.",
             "Keeping elbows close to your torso, curl the barbell up toward your chest.",
@@ -148,15 +166,23 @@
             "Slowly lower the bar back to the starting position without letting your elbows drift forward.",
         ], ["Biceps Brachii"], "assets/workouts/barbell_bicep_curl.jpg"),
 
-        new Workout(6, "Hammer Curl", "Biceps", [
+        new Workout(8, "Hammer Curl", "Biceps", [
             "Stand with your feet hip-width apart, holding a dumbbell in each hand with a neutral grip (palms facing in).",
             "Keep your elbows tight to your body and curl the weights upward.",
             "Do not rotate your wrists; keep palms facing in throughout the movement.",
             "Contract your biceps at the top of the curl, then slowly lower the weights back down.",
         ], ["Biceps", "Brachialis", "Forearms"], "assets/workouts/hammer_curl.webp"),
 
+        new Workout(9, "Concentration Curls", "Biceps", [
+            "Sit on a bench with your legs spread wide, holding a dumbbell in one hand.",
+            "Rest your elbow against the inside of your thigh on the same side.",
+            "Let the dumbbell hang with your arm fully extended.",
+            "Curl the weight up toward your shoulder, focusing on bicep contraction.",
+            "Slowly lower the weight back down and repeat before switching arms.",
+        ], ["Biceps Brachii"], "assets/workouts/concentration_curls.webp"),
+
         // Triceps
-        new Workout(7, "Overhead Tricep Extension", "Triceps", [
+        new Workout(10, "Overhead Tricep Extension", "Triceps", [
             "Hold a dumbbell with both hands and lift it over your head, arms extended upward.",
             "Keep your elbows close to your ears and pointed forward.",
             "Lower the dumbbell behind your head by bending at the elbows.",
@@ -164,13 +190,21 @@
             "Engage your triceps to extend your arms back to the starting position.",
         ], ["Triceps Brachii"], "assets/workouts/overhead_tricep_extension.jpg"),
 
-        new Workout(8, "Tricep Dips", "Triceps", [
+        new Workout(11, "Tricep Dips", "Triceps", [
             "Position your hands shoulder-width apart on a sturdy bench or chair behind you.",
             "Extend your legs out in front and slide your hips off the bench.",
             "Lower your body by bending your elbows to about a 90-degree angle.",
             "Push through your palms to raise yourself back to the starting position.",
             "Keep your back close to the bench throughout the movement.",
         ], ["Triceps"], "assets/workouts/tricep_dips.jpg"),
+
+        new Workout(12, "Close-Grip Push-ups", "Triceps", [
+            "Start in a standard push-up position but place your hands close together, forming a triangle with your thumbs and index fingers.",
+            "Keep your body in a straight line from head to heels.",
+            "Lower your body until your chest nearly touches your hands.",
+            "Push back up to the starting position, focusing on using your triceps.",
+            "Keep your elbows close to your body throughout the movement.",
+        ], ["Triceps Brachii", "Chest", "Shoulders"], "assets/workouts/close_grip_pushups.webp"),
     ];
 
     /**
