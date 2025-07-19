@@ -759,7 +759,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            height: 340px;
+            height: 390px;
             display: flex;
             flex-direction: column;
             position: relative;
@@ -772,16 +772,9 @@
         }
 
         /* Workout Image Handling */
-        .card-image-container {
-            position: relative;
-            height: 180px;
-            overflow: hidden;
-            background-color: #f8f9fa;
-        }
-
         .card-image {
             width: 100%;
-            height: 100%;
+            height: 150px;
             object-fit: cover;
             object-position: center center;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
